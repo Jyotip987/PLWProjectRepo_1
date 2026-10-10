@@ -1,0 +1,23 @@
+﻿GIT SETUP (VS Code and remote repo)
+
+A) Project folder already exists; create the remote repo empty
+In VS Code, open the project folder and run in Terminal:
+  git init -b main
+  git add .
+  git status
+  git commit -m "Initial commit"
+  git remote add origin <repository-URL>
+  git push -u origin main
+Check `git status` for private files before committing. Replace <repository-URL> with the HTTPS URL from the remote repo's Code menu.
+
+B) Remote repo already exists; start from it
+In VS Code Terminal, run:
+  git clone -b <branch-name> <repository-URL>
+  cd <repository-folder>
+  code .
+
+
+git fetch origin
+git branch -r
+git switch --track origin/UIvalildation_Eventbookapp
+Use the branch name shown in the remote repo. Cloning brings its commits and branches into the local folder.

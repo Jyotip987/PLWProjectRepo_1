@@ -1,0 +1,26 @@
+{
+  "name": "playwright-typescript-automation",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "report": "playwright show-report",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.0",
+    "@types/node": "^22.20.5",
+    "allure-commandline": "^2.46.1",
+    "allure-playwright": "^3.13.0",
+    "dotenv": "^17.4.2",
+    "typescript": "^6.0.3"
+  },
+  "dependencies": {
+    "playwright": "^1.64.0"
+  }
+}
