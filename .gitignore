@@ -20,3 +20,4 @@ allure-results/
 npm-debug.log*
 .DS_Store
 Thumbs.db
+demo.spec.ts

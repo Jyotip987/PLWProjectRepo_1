@@ -24,11 +24,11 @@ const baseConfig = defineConfig({
 
     }
   }]],
-  globalSetup: path.resolve(__dirname, './tests/setup/global-setup.ts'),
-  globalTeardown: path.resolve(__dirname, './tests/setup/global-teardown.ts'),
+  globalSetup: path.resolve(__dirname, './setup/global-setup.ts'),
+  globalTeardown: path.resolve(__dirname, './setup/global-teardown.ts'),
   use: {
     //baseURL: environment.appUrl,
-    headless: false,
+    headless: process.env.CI ? true:false,
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
   },

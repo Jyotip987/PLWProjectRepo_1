@@ -1,18 +1,21 @@
-import type { APIRequestContext, TestInfo } from '@playwright/test';
+import type { APIRequestContext } from '@playwright/test';
 import type { LoginPayload, LoginResult } from '../../types';
-import getLoginPayload from '../test-data/api-payload';
-let config
+import getLoginPayload from '../../tests/test-data/api-payload';
+
 type LoginResponse = {
   token?: string;
 };
 export default async function login(
   request: APIRequestContext,
-  testInfo:TestInfo,
+  apiBaseURL: string,
   credentials: LoginPayload = getLoginPayload(),
   
 ): Promise<LoginResult> {
-config= testInfo.project.use as any
-  const response = await request.post(`${config.apiBaseURL}/api/auth/login`, {
+  if (!apiBaseURL?.trim()) {
+    throw new Error('Missing required environment fixture: apiBaseURL');
+  }
+
+  const response = await request.post(`${apiBaseURL}/api/auth/login`, {
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',

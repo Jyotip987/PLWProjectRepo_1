@@ -10,7 +10,8 @@
     "test:headed": "playwright test --headed",
     "test:ui": "playwright test --ui",
     "report": "playwright show-report",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "dev-testrun": "npx playwright test --config=config/dev.playwright.config.ts tests/specs/eventHube2e.spec.ts"
   },
   "devDependencies": {
     "@playwright/test": "^1.64.0",
